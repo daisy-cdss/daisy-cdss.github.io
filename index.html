@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DAISY</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/theme/moon.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="reveal">
+    <div class="logo-balken klg-logo">
+      <img src="img/klg.png" alt="LogoKLG">
+    </div>
+    <img class="deck-logo daisy-logo" src="img/daisy_logo.png" alt="DAISY-Logo">
+
+    <div class="slides">
+
+      <!-- Folie 1: bisherige Folie 1 -->
+<section class="show-klg-logo">
+        <h2 class="deck-title">DAISY</h2>
+	<h3>Digitales Alarm- und Informationssystem</h3>
+	<h4>Algorithmik in die Klinik bringen</h4>
+        <p>Prof. Dr. phil. nat. René Staritzbichler, 5.11.2026</p>
+        <img class="title-illustration" src="img/ml_probe.png">
+      </section>
+
+      <!-- Folie 2: bisherige Folie 16 -->
+<section class="nn-slide algo-flow daisy-system daisy-hub" data-transition="fade">
+  <div class="nn-head">
+    <div>
+      <h2 class="nn-title">Digitales Alarm- und Informationssystem (DAISY)</h2>
+      <p class="nn-subtitle">Die Integration von digitalen Unterstützungssystemen in die Klinik zur frühzeitigen Unterstützung des Diagnoseprozesses</p>
+    </div>
+
+    
+  </div>
+  <p class="daisy-lead">DAISY a) sammelt Daten, b) lässt Algorithmen laufen und c) informiert das medizinische Personal</p>
+
+
+  <p class="daisy-lead">DAISY ist ein unabhängiges Hardware-System, das in die Klinik-IT-Struktur eingebettet ist</p>
+
+
+  <img class="figure-width-80" src="img/daisy_aufgaben.png">
+  
+</section>
+
+      <!-- Folie 3: bisherige Folie 17 -->
+<section class="nn-slide algo-flow daisy-system daisy-cdss show-daisy-logo" data-transition="fade">
+  <div class="nn-head">
+    <div>
+      <h2 class="nn-title">Digitale Unterstützungssysteme klinischer Entscheidungen</h2>
+      <p class="nn-subtitle">Engl.: Clinical decision support systems - CDSS</p>
+    </div>
+  </div>
+  <img class="figure-width-60" src="img/daisy_alg.png">
+</section>
+
+      <!-- Folie 4: bisherige Folie 18 -->
+<section >
+      <h3>DAISY – Funktionsebenen</h3>
+      <img class="figure-width-70" src="img/daisy_gefahr.png">
+</section>
+
+      <!-- Folie 5: bisherige Folie 19 -->
+<section class="nn-slide algo-flow daisy-system daisy-klinik" data-transition="fade">
+  <div class="nn-head">
+    <div>
+      <h2 class="nn-title">Integration in frühe Phase klinischer Diagnostik</h2>
+    </div>
+  </div>
+  <ul class="k-notes">
+    <li>DAISY schaltet gelbe/rote Ampel im SAP</li>
+    <li>Click auf Symbol öffnet Alarmseite</li>
+  </ul>
+  <img class="figure-width-100" src="img/daisy_fluss.png">
+</section>
+
+      <!-- Folie 6: bisherige Folie 20 -->
+<section class="nn-slide daisy-system daisy-alarm" data-transition="fade">
+  <div class="nn-head">
+    <div>
+      <h2 class="nn-title">Alarmseite</h2>
+    </div>
+  </div>
+  <div class="alarm-layout">
+    <img src="img/alarmseite.png" alt="Alarmseite mit Alarmübersicht">
+    <ul class="alarm-notes">
+      <li>Alarmübersicht
+        <ul><li>Es können mehrere erscheinen</li></ul>
+      </li>
+      <li>Was ist wichtig zu beachten?
+        <ul><li>Links zu SimplifyU und DAISY-Sepsis Anleitung</li></ul>
+      </li>
+      <li>Ihre Rückmeldung ist wichtig:
+        <ul>
+          <li>Medizinisch plausibel?</li>
+          <li>Alarm hilfreich?</li>
+          <li>Jede Art von Rückmeldung</li>
+          <li>Spätere Revidierung/Neubewertung möglich</li>
+          <li>Gäbe es weitere wichtige Wege der Alarmierung?</li>
+        </ul>
+      </li>
+      <li>Alarm quittieren
+        <ul>
+          <li>Ampel wird grün</li>
+          <li>Für alle Nutzer!</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</section>
+
+      <!-- Folie 7: bisherige Folie 21 -->
+<section class="nn-slide algo-flow daisy-system daisy-infra" data-transition="fade">
+  <div class="nn-head">
+    <div>
+      <h2 class="nn-title">Integration in die klinische Dateninfrastruktur</h2>
+    </div>
+  </div>
+  <img class="figure-width-100" src="img/daisy_integration.png">
+
+  <div class="nn-footer">
+    <span class="nn-ex-label">Ablauf</span>
+    <p>DAISY erkennt Problem, setzt Alarmsymbol in KIS/LIS, schreibt entsprechende Webseite mit relevanten Informationen. Durch Anklicken des Alarmsymbols in der Benutzeroberfläche (KIS/LIS) öffnet sich die erzeugte Webseite.</p>
+  </div>
+</section>
+
+      <!-- Folie 8: bisherige Folie 22 -->
+<section class="daisy-algos-v2" data-transition="fade">
+
+  <header class="da-header">
+    <h2>DAISY – Algorithmen</h2>
+  </header>
+
+  <div class="da-columns">
+
+    <!-- LINKS: LERNALGORITHMEN -->
+    <div class="da-column da-column--ml">
+
+      <article class="da-card">
+        <h3>Sepsis</h3>
+        <div class="da-facts">
+          <p>Erkennung aus <strong class="da-underlined">kleinem Blutbild</strong>, Alter, Geschlecht</p>
+          <p>Rote Ampel im SAP</p>
+          <p>Pilotstudie mit Gastroenterologie und ZNA</p>
+          <p class="da-emphasis">50 erkannte Fälle in 19 Tagen</p>
+        </div>
+      </article>
+
+      <article class="da-card">
+        <h3>Probenverwechslung</h3>
+        <div class="da-facts">
+          <p>Erkennung aus kleinem Blutbild</p>
+        </div>
+      </article>
+
+      <div class="da-category">Lernalgorithmen</div>
+    </div>
+
+    <!-- RECHTS: REGELWERKE -->
+    <div class="da-column da-column--rules">
+
+      <article class="da-card">
+        <h3>Nierenversagen</h3>
+        <div class="da-facts">
+          <p>Erkennung aus Kreatinin-Verlauf</p>
+          <p>Auf Befund und gelbe Ampel im SAP</p>
+          <p class="da-emphasis">
+            Durchschnittlich 33 erkannte Fälle pro Tag
+          </p>
+        </div>
+      </article>
+
+      <article class="da-card">
+        <h3>Hypokaliämie-Monitor</h3>
+        <div class="da-facts">
+          <p>Erkennung anhand des Kaliumwerts</p>
+          <p class="da-emphasis">
+            Kalium &lt; 2,5 mmol/L:
+            neue Anforderung nach 6 Stunden
+          </p>
+        </div>
+      </article>
+
+      <article class="da-card">
+        <h3>Leberfibrose-Score</h3>
+        <div class="da-facts">
+          <p>Berechnung aus PLT, GOT, GPT, Alter</p>
+          <p>Etablierter Score</p>
+          <p>Auf Anforderung</p>
+        </div>
+      </article>
+
+      <div class="da-category">Regelwerke</div>
+    </div>
+
+  </div>
+</section>
+
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
+  <script>
+    Reveal.initialize({
+      width: 1280,
+      height: 720,
+      margin: 0,
+      minScale: 0.2,
+      maxScale: 1.5,
+      center: false,
+      controls: false,
+      slideNumber: 'c/t',
+      hash: true,
+      transition: 'fade'
+    });
+  </script>
+</body>
+</html>
