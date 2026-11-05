@@ -457,3 +457,10 @@ body {
 .daisy-algos-v2 .da-underlined {
   text-decoration: underline;
 }
+
+
+.da-columns-4 {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 12px;
+}
