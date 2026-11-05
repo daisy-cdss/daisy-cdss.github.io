@@ -258,7 +258,7 @@ body {
 .daisy-alarm .nn-head {
   position: relative;
   z-index: 2;
-  background: #111827;
+  #background: #111827;
   flex: 0 0 auto;
 }
 
