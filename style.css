@@ -21,18 +21,20 @@ body {
 }
 
 /* Reveal skaliert die Folie per transform:scale() und legt eine
-   Perspektive auf .slides. In Edge, Chrome, Firefox und Safari
-   liegt die Schrift dann neben dem Pixelraster und wird weich.
-   Derselbe Massstab als zoom rastert die Glyphen in der Zielgroesse.
-   Der Wert kommt aus index.html; ohne Klasse bleibt Reveals
-   eigene Skalierung, etwa wenn der Browser kein zoom kennt. */
+   Perspektive auf .slides. Jede Transformation, auch nur eine
+   Verschiebung, schaltet in Edge die Subpixel-Glaettung aus.
+   zoom rastert die Glyphen in der Zielgroesse, die negativen
+   Raender zentrieren ohne Transformation. Ohne Klasse bleibt
+   Reveals eigene Skalierung, etwa wenn der Browser kein zoom kennt. */
 .reveal .slides {
   perspective: none;
 }
 
 html:not(.reveal-print):not(.print-pdf) .reveal .slides.massstab-zoom {
   zoom: var(--daisy-massstab);
-  transform: translate(-50%, -50%) !important;
+  transform: none !important;
+  margin-left: calc(var(--daisy-slide-breite) / -2);
+  margin-top: calc(var(--daisy-slide-hoehe) / -2);
 }
 
 .reveal .slides section h2,
@@ -142,8 +144,11 @@ html:not(.reveal-print):not(.print-pdf) .reveal .slides.massstab-zoom {
   margin: 0;
   color: #f7f9ff;
   font-size: 32px;
-  font-weight: 720;
-  letter-spacing: -.02em;
+  /* 720 ist kein fertiger Schnitt. Edge rechnet ihn aus Aptos
+     zusammen und die Kanten werden weich. 700 ist Bold auf
+     Mac und in Edge, die Laufweite bleibt auf dem Raster. */
+  font-weight: 700;
+  letter-spacing: 0;
   line-height: 1.11;
   text-transform: none;
 }

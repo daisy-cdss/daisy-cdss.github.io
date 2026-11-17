@@ -451,12 +451,21 @@
       if (massstab === 1) {
         folien.classList.remove("massstab-zoom");
         folien.style.removeProperty("--daisy-massstab");
+        folien.style.removeProperty("--daisy-slide-breite");
+        folien.style.removeProperty("--daisy-slide-hoehe");
         return;
       }
-      var wert = String(massstab);
-      if (folien.style.getPropertyValue("--daisy-massstab") !== wert) {
-        folien.style.setProperty("--daisy-massstab", wert);
-      }
+      var groesse = Reveal.getComputedSlideSize();
+      var werte = {
+        "--daisy-massstab": String(massstab),
+        "--daisy-slide-breite": groesse.width + "px",
+        "--daisy-slide-hoehe": groesse.height + "px"
+      };
+      Object.keys(werte).forEach(function (name) {
+        if (folien.style.getPropertyValue(name) !== werte[name]) {
+          folien.style.setProperty(name, werte[name]);
+        }
+      });
       folien.classList.add("massstab-zoom");
     }
 
