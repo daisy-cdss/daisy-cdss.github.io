@@ -20,6 +20,21 @@ body {
   color: var(--text);
 }
 
+/* Reveal skaliert die Folie per transform:scale() und legt eine
+   Perspektive auf .slides. In Edge, Chrome, Firefox und Safari
+   liegt die Schrift dann neben dem Pixelraster und wird weich.
+   Derselbe Massstab als zoom rastert die Glyphen in der Zielgroesse.
+   Der Wert kommt aus index.html; ohne Klasse bleibt Reveals
+   eigene Skalierung, etwa wenn der Browser kein zoom kennt. */
+.reveal .slides {
+  perspective: none;
+}
+
+html:not(.reveal-print):not(.print-pdf) .reveal .slides.massstab-zoom {
+  zoom: var(--daisy-massstab);
+  transform: translate(-50%, -50%) !important;
+}
+
 .reveal .slides section h2,
 .reveal .slides section h3,
 .reveal .slides section h4 {

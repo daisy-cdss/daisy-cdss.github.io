@@ -42,7 +42,7 @@
   <p class="daisy-lead">DAISY ist ein unabhängiges Hardware-System, das in die Klinik-IT-Struktur eingebettet ist</p>
 
 
-  <img class="figure-width-70"  style="margin-top:1em;" src="img/daisy_aufgaben.png">
+  <img class="figure-width-60"  style="margin-top:1em;" src="img/daisy_aufgaben.png">
   
 </section>
 
@@ -427,7 +427,40 @@
 
   <script src="https://cdn.jsdelivr.net/npm/reveal.js@5/dist/reveal.js"></script>
   <script>
-    Reveal.initialize({
+    // zoom ist in den aktuellen Desktop-Browsern derselbe scharfe Weg.
+    // Aeltere Firefox-Versionen und Android behalten Reveals scale().
+    function zoomVerfuegbar() {
+      if (typeof CSS === "undefined" || typeof CSS.supports !== "function") {
+        return false;
+      }
+      if (!CSS.supports("zoom", "1")) {
+        return false;
+      }
+      return !/android/i.test(navigator.userAgent);
+    }
+
+    // Reveal schreibt bei jedem Layout ein scale() auf .slides.
+    // Die Klasse schaltet die Regel in style.css, der Massstab
+    // bleibt der von Reveal berechnete Faktor.
+    function scharfeDarstellung() {
+      var folien = document.querySelector(".reveal .slides");
+      if (!folien || typeof Reveal.getScale !== "function" || !zoomVerfuegbar()) {
+        return;
+      }
+      var massstab = Reveal.getScale();
+      if (massstab === 1) {
+        folien.classList.remove("massstab-zoom");
+        folien.style.removeProperty("--daisy-massstab");
+        return;
+      }
+      var wert = String(massstab);
+      if (folien.style.getPropertyValue("--daisy-massstab") !== wert) {
+        folien.style.setProperty("--daisy-massstab", wert);
+      }
+      folien.classList.add("massstab-zoom");
+    }
+
+    var start = Reveal.initialize({
       width: 1280,
       height: 720,
       margin: 0,
@@ -439,6 +472,22 @@
       hash: true,
       transition: 'fade'
     });
+
+    function skalierungEinhaengen() {
+      var folien = document.querySelector(".reveal .slides");
+      scharfeDarstellung();
+      if (!folien || typeof MutationObserver !== "function") {
+        return;
+      }
+      var beobachter = new MutationObserver(scharfeDarstellung);
+      beobachter.observe(folien, { attributes: true, attributeFilter: ["style"] });
+    }
+
+    if (start && typeof start.then === "function") {
+      start.then(skalierungEinhaengen);
+    } else {
+      skalierungEinhaengen();
+    }
   </script>
 </body>
 </html>
